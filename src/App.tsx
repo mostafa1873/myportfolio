@@ -16,6 +16,8 @@ export default function App() {
   return (
     <>
       <div className="bg-dark-bg min-h-screen text-neutral-300 antialiased selection:bg-amber-500 selection:text-black">
+
+
         {/* Premium Glassmorphic Navbar */}
         <Navbar />
 

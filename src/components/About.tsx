@@ -25,34 +25,34 @@ export default function About() {
       {/* Background radial highlight */}
       <div className="absolute top-[30%] left-[-10%] w-[30rem] h-[30rem] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col items-start space-y-4 mb-16">
-          <span className="text-xs font-mono tracking-widest text-white/40 flex items-center space-x-2">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-4 mb-12 sm:mb-16">
+          <span className="text-xs font-mono tracking-widest text-white/40 flex items-center justify-center md:justify-start space-x-2">
             <Sparkles size={12} />
             <span>01 . MY STORY</span>
           </span>
-          <h2 className="font-display font-black text-4xl md:text-5xl text-white tracking-tight uppercase">
+          <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-tight uppercase">
             About Me
           </h2>
-          <div className="w-12 h-px bg-white/20"></div>
+          <div className="w-12 h-px bg-white/20 mx-auto md:mx-0"></div>
         </div>
 
         {/* Content Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Left Side: Elite Philosophy Quote */}
           <motion.div
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="lg:col-span-5 flex flex-col space-y-6"
+            className="lg:col-span-5 flex flex-col space-y-6 text-center md:text-left"
           >
-            <p className="font-display font-light text-2xl md:text-3xl lg:text-4xl leading-snug text-white/80 uppercase">
+            <p className="font-display font-light text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-snug text-white/80 uppercase">
               "Developing clean, <strong className="text-white font-semibold">scalable user interfaces</strong> and delivering <strong className="text-white/40">high-performance</strong> experiences."
             </p>
-            <div className="p-6 rounded-3xl glass-card border-white/10 flex flex-col space-y-4">
-              <div className="flex items-center space-x-3 text-white">
+            <div className="p-6 rounded-3xl glass-card border-white/10 flex flex-col space-y-4 text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start space-x-3 text-white">
                 <Terminal size={18} />
                 <span className="font-mono text-xs font-semibold">THE PROBLEM-SOLVER</span>
               </div>
@@ -68,7 +68,7 @@ export default function About() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="lg:col-span-7 flex flex-col space-y-6 text-white/60 text-md md:text-lg font-light leading-relaxed"
+            className="lg:col-span-7 flex flex-col space-y-6 text-white/60 text-base sm:text-md md:text-lg font-light leading-relaxed text-center md:text-left"
           >
             <p>
               Front-End Developer with <strong className="text-white font-normal">1 year of professional experience at Global Nexus</strong>, preceded by 9 months of intensive self-directed training building practice projects, <strong className="text-white font-normal">nearly two years of hands-on, continuous work with React.js and Next.js</strong>.
@@ -84,9 +84,9 @@ export default function About() {
             </p>
 
             {/* Core Values / Badges */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-6 mt-6 border-t border-white/10">
-              <div className="flex items-start space-x-3">
-                <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-white/80">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-6 mt-6 border-t border-white/10 text-left">
+              <div className="flex items-center sm:items-start space-x-3 p-3 sm:p-0 rounded-2xl sm:rounded-none bg-white/[0.02] sm:bg-transparent">
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-white/80 shrink-0">
                   <Shield size={16} />
                 </div>
                 <div>
@@ -95,8 +95,8 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3">
-                <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-white/80">
+              <div className="flex items-center sm:items-start space-x-3 p-3 sm:p-0 rounded-2xl sm:rounded-none bg-white/[0.02] sm:bg-transparent">
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-white/80 shrink-0">
                   <Award size={16} />
                 </div>
                 <div>
@@ -105,8 +105,8 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3 col-span-2 md:col-span-1">
-                <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-white/80">
+              <div className="flex items-center sm:items-start space-x-3 p-3 sm:p-0 rounded-2xl sm:rounded-none bg-white/[0.02] sm:bg-transparent sm:col-span-2 md:col-span-1">
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-white/80 shrink-0">
                   <Sparkles size={16} />
                 </div>
                 <div>

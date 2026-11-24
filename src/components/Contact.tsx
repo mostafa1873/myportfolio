@@ -52,46 +52,46 @@ export default function Contact() {
       <div className="absolute bottom-[-10%] right-[5%] w-[40rem] h-[40rem] rounded-full bg-orange-500/5 blur-[180px] pointer-events-none"></div>
       <div className="absolute top-[20%] left-[-10%] w-[30rem] h-[30rem] rounded-full bg-blue-500/5 blur-[150px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Huge Display Heading */}
-        <div className="flex flex-col items-start space-y-4 mb-16">
-          <span className="text-xs font-mono tracking-widest text-white/40 flex items-center space-x-2">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-4 mb-12 sm:mb-16">
+          <span className="text-xs font-mono tracking-widest text-white/40 flex items-center justify-center md:justify-start space-x-2">
             <Sparkles size={12} />
             <span>07 . START A COLLABORATION</span>
           </span>
-          <h2 className="font-display font-black text-5xl md:text-6xl lg:text-7xl text-white tracking-tight leading-none max-w-4xl uppercase">
-            Let's Build Something <br />
+          <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white tracking-tight leading-tight md:leading-none max-w-4xl uppercase">
+            Let's Build Something <br className="hidden xs:inline" />
             <span className="text-white/50">Great Together</span>
           </h2>
-          <div className="w-16 h-px bg-white/20 mt-4"></div>
+          <div className="w-16 h-px bg-white/20 mt-2 sm:mt-4 mx-auto md:mx-0"></div>
         </div>
 
         {/* Contact Split layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16 sm:mb-24">
           {/* Left: Contact Info details & handles */}
-          <div className="lg:col-span-5 flex flex-col space-y-8">
-            <p className="text-white/60 text-lg font-light leading-relaxed max-w-md">
+          <div className="lg:col-span-5 flex flex-col space-y-6 sm:space-y-8 text-center md:text-left items-center md:items-start">
+            <p className="text-white/60 text-base sm:text-lg font-light leading-relaxed max-w-md">
               Whether you want to construct an enterprise system, high-converting product lander, or have hardware-logic technical inquiries — reach out. Let’s make it real.
             </p>
 
             {/* Address cards with Copy-to-clipboard functionality */}
-            <div className="space-y-4">
+            <div className="space-y-4 w-full">
               {/* Email Address */}
-              <div className="group flex items-center justify-between p-6 rounded-3xl glass-card border-white/10 hover:border-white/20 transition-all">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80">
+              <div className="group flex items-center justify-between p-4 sm:p-6 rounded-3xl glass-card border-white/10 hover:border-white/20 transition-all text-left">
+                <div className="flex items-center space-x-3 sm:space-x-4 min-w-0 pr-2">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80 shrink-0">
                     <Mail size={18} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="text-[10px] font-mono tracking-widest text-white/40 uppercase">EMAIL ADDRESS</h4>
-                    <a href={`mailto:${PERSONAL_INFO.email}`} className="text-white text-sm font-semibold hover:text-white/80 transition-colors">
+                    <a href={`mailto:${PERSONAL_INFO.email}`} className="text-white text-xs sm:text-sm font-semibold hover:text-white/80 transition-colors block truncate">
                       {PERSONAL_INFO.email}
                     </a>
                   </div>
                 </div>
                 <button
                   onClick={() => copyToClipboard(PERSONAL_INFO.email, "email")}
-                  className="p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-white/60 hover:text-white transition-all cursor-pointer"
+                  className="p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-white/60 hover:text-white transition-all cursor-pointer shrink-0"
                   title="Copy Email"
                 >
                   {copiedEmail ? <Check size={14} className="text-green-400" /> : <Copy size={14} />}
@@ -99,21 +99,21 @@ export default function Contact() {
               </div>
 
               {/* Phone Dial */}
-              <div className="group flex items-center justify-between p-6 rounded-3xl glass-card border-white/10 hover:border-white/20 transition-all">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80">
+              <div className="group flex items-center justify-between p-4 sm:p-6 rounded-3xl glass-card border-white/10 hover:border-white/20 transition-all text-left">
+                <div className="flex items-center space-x-3 sm:space-x-4 min-w-0 pr-2">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80 shrink-0">
                     <Phone size={18} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="text-[10px] font-mono tracking-widest text-white/40 uppercase">PHONE NUMBER</h4>
-                    <a href={`tel:${PERSONAL_INFO.phone}`} className="text-white text-sm font-semibold hover:text-white/80 transition-colors">
+                    <a href={`tel:${PERSONAL_INFO.phone}`} className="text-white text-xs sm:text-sm font-semibold hover:text-white/80 transition-colors block truncate">
                       {PERSONAL_INFO.phone}
                     </a>
                   </div>
                 </div>
                 <button
                   onClick={() => copyToClipboard(PERSONAL_INFO.phone, "phone")}
-                  className="p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-white/60 hover:text-white transition-all cursor-pointer"
+                  className="p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-white/60 hover:text-white transition-all cursor-pointer shrink-0"
                   title="Copy Phone"
                 >
                   {copiedPhone ? <Check size={14} className="text-green-400" /> : <Copy size={14} />}
@@ -122,7 +122,7 @@ export default function Contact() {
             </div>
 
             {/* Social Accounts links */}
-            <div className="space-y-3 pt-4">
+            <div className="space-y-3 pt-2 sm:pt-4 flex flex-col items-center md:items-start w-full">
               <h4 className="text-[10px] font-mono tracking-widest text-white/40 uppercase">SOCIAL NETWORKS</h4>
               <div className="flex items-center space-x-3">
                 <a
@@ -130,7 +130,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Mostafa Osama GitHub Profile"
-                  className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-black hover:-translate-y-1 transition-all text-white/60 shadow-lg"
+                  className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-black hover:-translate-y-1 transition-all text-white/60 shadow-lg"
                 >
                   <Github size={18} />
                 </a>
@@ -139,7 +139,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Mostafa Osama LinkedIn Profile"
-                  className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-blue-500 hover:-translate-y-1 transition-all text-white/60 shadow-lg"
+                  className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-blue-500 hover:-translate-y-1 transition-all text-white/60 shadow-lg"
                 >
                   <Linkedin size={18} />
                 </a>
@@ -148,12 +148,12 @@ export default function Contact() {
           </div>
 
           {/* Right: Premium Interactive Contact Form */}
-          <div className="lg:col-span-7">
-            <form onSubmit={handleFormSubmit} className="p-8 md:p-10 rounded-3xl glass-card border-white/10 space-y-6 relative overflow-hidden">
-              <h3 className="font-display font-bold text-xl text-white mb-2">Send a Message</h3>
+          <div className="lg:col-span-7 w-full">
+            <form onSubmit={handleFormSubmit} className="p-5 sm:p-8 md:p-10 rounded-3xl glass-card border-white/10 space-y-5 sm:space-y-6 relative overflow-hidden text-left">
+              <h3 className="font-display font-bold text-lg sm:text-xl text-white mb-2">Send a Message</h3>
               <p className="text-white/30 text-xs font-mono">FILLING OUT THE SECURE FORM AUTOMATICALLY CHANNELS YOUR REQUESTS DIRECTLY</p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-[10px] font-mono tracking-widest text-white/40 uppercase font-bold">YOUR NAME</label>
                   <input
@@ -237,10 +237,10 @@ export default function Contact() {
         </div>
 
         {/* Footer Area */}
-        <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/40">
+        <div className="pt-8 sm:pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/40 text-center md:text-left">
           <p>© {new Date().getFullYear()} Mostafa Osama. All rights reserved. Crafted with precision.</p>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex flex-wrap items-center justify-center space-x-4 sm:space-x-6">
             <a href="#about" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#projects" className="hover:text-white transition-colors">Client Agreements</a>
             <button

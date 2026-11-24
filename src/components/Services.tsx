@@ -39,17 +39,17 @@ export default function Services() {
       {/* Background ambient light */}
       <div className="absolute top-[30%] left-[20%] w-[30rem] h-[30rem] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col items-start space-y-4 mb-20">
-          <span className="text-xs font-mono tracking-widest text-white/40 flex items-center space-x-2">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-4 mb-14 sm:mb-20">
+          <span className="text-xs font-mono tracking-widest text-white/40 flex items-center justify-center md:justify-start space-x-2">
             <Sparkles size={12} />
             <span>05 . PROFESSIONAL OFFERINGS</span>
           </span>
-          <h2 className="font-display font-black text-4xl md:text-5xl text-white tracking-tight uppercase">
+          <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-tight uppercase">
             Services I Offer
           </h2>
-          <div className="w-12 h-px bg-white/20"></div>
+          <div className="w-12 h-px bg-white/20 mx-auto md:mx-0"></div>
         </div>
 
         {/* Services Bento Grid */}
@@ -58,7 +58,7 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8"
         >
           {SERVICES.map((srv, index) => {
             const IconComponent = iconMap[srv.iconName] || Code;
@@ -67,7 +67,7 @@ export default function Services() {
               <motion.div
                 key={srv.id}
                 variants={itemVariants}
-                className={`group p-8 rounded-3xl glass-card border-white/10 hover:border-white/20 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[280px] ${
+                className={`group p-6 sm:p-8 rounded-3xl glass-card border-white/10 hover:border-white/20 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[260px] sm:min-h-[280px] text-left ${
                   isFeatured ? "bg-white/5" : ""
                 }`}
               >

@@ -29,22 +29,22 @@ export default function Skills() {
       {/* Background ambient highlights */}
       <div className="absolute top-[40%] right-[-10%] w-[30rem] h-[30rem] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div className="flex flex-col items-start space-y-4">
-            <span className="text-xs font-mono tracking-widest text-white/40 flex items-center space-x-2">
+        <div className="flex flex-col md:flex-row items-center md:items-end justify-center md:justify-between gap-6 mb-12 sm:mb-16 text-center md:text-left">
+          <div className="flex flex-col items-center md:items-start space-y-4 w-full md:w-auto">
+            <span className="text-xs font-mono tracking-widest text-white/40 flex items-center justify-center md:justify-start space-x-2">
               <Sparkles size={12} />
               <span>02 . CAPABILITIES</span>
             </span>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-white tracking-tight uppercase">
+            <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-tight uppercase">
               My Tech Stack
             </h2>
-            <div className="w-12 h-px bg-white/20"></div>
+            <div className="w-12 h-px bg-white/20 mx-auto md:mx-0"></div>
           </div>
 
           {/* Filtering Tab buttons */}
-          <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl">
+          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 p-1.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl max-w-full mx-auto md:mx-0">
             {categories.map((cat) => {
               const Icon = cat.icon;
               const isActive = activeCategory === cat.id;
@@ -52,7 +52,7 @@ export default function Skills() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id as any)}
-                  className={`flex items-center space-x-2 px-4 py-2.5 rounded-xl font-display text-xs font-semibold transition-all duration-300 relative cursor-pointer ${
+                  className={`flex items-center justify-center space-x-1.5 sm:space-x-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-display text-xs font-semibold transition-all duration-300 relative cursor-pointer ${
                     isActive ? "text-black" : "text-white/60 hover:text-white"
                   }`}
                 >
@@ -74,7 +74,7 @@ export default function Skills() {
         {/* Skills Grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {filteredSkills.map((skill) => (
             <motion.div
@@ -84,7 +84,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
-              className="group p-6 rounded-3xl glass-card border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between space-y-6 relative overflow-hidden"
+              className="group p-5 sm:p-6 rounded-3xl glass-card border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between space-y-5 sm:space-y-6 relative overflow-hidden text-left"
             >
               {/* Subtle hover gradient glow */}
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/0 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>

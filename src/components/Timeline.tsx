@@ -16,21 +16,21 @@ export default function Timeline() {
       {/* Background Glow */}
       <div className="absolute top-[20%] left-[5%] w-[25rem] h-[25rem] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center space-y-4 mb-20">
-          <span className="text-xs font-mono tracking-widest text-white/40 flex items-center space-x-2">
+        <div className="flex flex-col items-center text-center space-y-4 mb-14 sm:mb-20">
+          <span className="text-xs font-mono tracking-widest text-white/40 flex items-center justify-center space-x-2">
             <Sparkles size={12} />
             <span>03 . PROFESSIONAL RECORD</span>
           </span>
-          <h2 className="font-display font-black text-4xl md:text-5xl text-white tracking-tight uppercase">
+          <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-tight uppercase">
             Career Timeline
           </h2>
-          <div className="w-12 h-px bg-white/20"></div>
+          <div className="w-12 h-px bg-white/20 mx-auto"></div>
         </div>
 
         {/* Vertical Timeline Track Container */}
-        <div className="relative border-l-2 border-white/10 ml-4 md:ml-32 pl-8 md:pl-12 space-y-16">
+        <div className="relative border-l-2 border-white/10 ml-2 xs:ml-4 md:ml-32 pl-5 xs:pl-7 md:pl-12 space-y-12 sm:space-y-16">
           {EXPERIENCES.map((exp, index) => (
             <motion.div
               key={exp.id}
@@ -41,12 +41,12 @@ export default function Timeline() {
               className="relative group"
             >
               {/* Timeline Indicator Node */}
-              <div className="absolute -left-[41px] md:-left-[57px] top-1.5 w-5 h-5 rounded-full bg-black border-2 border-white/30 flex items-center justify-center z-10 group-hover:bg-white transition-colors duration-300">
+              <div className="absolute -left-[29px] xs:-left-[37px] md:-left-[57px] top-1.5 w-4 h-4 xs:w-5 xs:h-5 rounded-full bg-black border-2 border-white/30 flex items-center justify-center z-10 group-hover:bg-white transition-colors duration-300">
                 <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
               </div>
 
               {/* Glowing Ambient Dot behind nodes */}
-              <div className="absolute -left-[45px] md:-left-[61px] top-0.5 w-7 h-7 rounded-full bg-white/10 blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <div className="absolute -left-[33px] xs:-left-[41px] md:-left-[61px] top-0.5 w-6 h-6 xs:w-7 xs:h-7 rounded-full bg-white/10 blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
               {/* Left-Side Desktop Year Indicator */}
               <div className="hidden md:block absolute -left-44 top-1.5 w-28 text-right">
@@ -56,7 +56,7 @@ export default function Timeline() {
               </div>
 
               {/* Core Content Card */}
-              <div className="p-8 rounded-3xl glass-card border-white/10 hover:border-white/20 transition-all duration-300 relative group">
+              <div className="p-5 sm:p-8 rounded-2xl sm:rounded-3xl glass-card border-white/10 hover:border-white/20 transition-all duration-300 relative group text-left">
                 <div className="flex flex-col space-y-4">
                   {/* Title & Organization */}
                   <div>
@@ -64,7 +64,7 @@ export default function Timeline() {
                       {exp.years}
                     </span>
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                      <h3 className="font-display font-black text-xl text-white transition-colors">
+                      <h3 className="font-display font-black text-lg sm:text-xl text-white transition-colors">
                         {exp.role}
                       </h3>
                       <span className="text-[10px] font-mono tracking-widest px-2.5 py-1 rounded bg-white/5 text-white/50 border border-white/10 uppercase self-start sm:self-center">
@@ -77,7 +77,7 @@ export default function Timeline() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-white/60 text-sm font-light leading-relaxed">
+                  <p className="text-white/60 text-xs sm:text-sm font-light leading-relaxed">
                     {exp.description}
                   </p>
 
