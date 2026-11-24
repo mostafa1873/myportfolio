@@ -3,87 +3,145 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mostafa Osama | Front-End Developer (React.js &amp; Next.js)</title>
-    
+
+    <title>Mostafa Osama | Front-End Developer (React.js & Next.js)</title>
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Front-End Developer in Egypt building fast, SEO-optimized React and Next.js websites for export and marketing companies. View my projects and get in touch." />
-    <meta name="keywords" content="React developer, Next.js developer, Front-End Developer Egypt, Alexandria, multi-language websites, SEO-friendly websites, Mostafa Osama" />
+    <meta
+      name="description"
+      content="Front-End Developer in Egypt building fast, SEO-optimized React and Next.js websites for export and marketing companies. View my projects and get in touch."
+    />
+    <meta
+      name="keywords"
+      content="React developer, Next.js developer, Front-End Developer Egypt, Alexandria, multi-language websites, SEO-friendly websites, Mostafa Osama"
+    />
     <meta name="author" content="Mostafa Osama" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0A0A0A" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://mostafa1873.github.io/My-Portfolio/" />
+    <!-- Dynamic Canonical URL -->
+    <link id="canonical-url" rel="canonical" href="/" />
 
     <!-- Favicon & Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/My-Portfolio/favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/My-Portfolio/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Mostafa Osama Portfolio" />
-    <meta property="og:title" content="Mostafa Osama | Front-End Developer (React.js &amp; Next.js)" />
-    <meta property="og:description" content="Front-End Developer in Egypt building fast, SEO-optimized React and Next.js websites for export and marketing companies. View my projects and get in touch." />
-    <meta property="og:url" content="https://mostafa1873.github.io/My-Portfolio/" />
-    <meta property="og:image" content="https://mostafa1873.github.io/My-Portfolio/og-image.png" />
+    <meta
+      property="og:title"
+      content="Mostafa Osama | Front-End Developer (React.js & Next.js)"
+    />
+    <meta
+      property="og:description"
+      content="Front-End Developer in Egypt building fast, SEO-optimized React and Next.js websites for export and marketing companies. View my projects and get in touch."
+    />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Mostafa Osama - Front-End Developer · React.js / Next.js" />
+    <meta
+      property="og:image:alt"
+      content="Mostafa Osama - Front-End Developer · React.js / Next.js"
+    />
     <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter Cards -->
+    <!-- Twitter / X Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mostafa Osama | Front-End Developer (React.js &amp; Next.js)" />
-    <meta name="twitter:description" content="Front-End Developer in Egypt building fast, SEO-optimized React and Next.js websites for export and marketing companies. View my projects and get in touch." />
-    <meta name="twitter:image" content="https://mostafa1873.github.io/My-Portfolio/og-image.png" />
-    <meta name="twitter:image:alt" content="Mostafa Osama - Front-End Developer · React.js / Next.js" />
+    <meta
+      name="twitter:title"
+      content="Mostafa Osama | Front-End Developer (React.js & Next.js)"
+    />
+    <meta
+      name="twitter:description"
+      content="Front-End Developer in Egypt building fast, SEO-optimized React and Next.js websites for export and marketing companies. View my projects and get in touch."
+    />
+    <meta name="twitter:image" content="/og-image.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="Mostafa Osama - Front-End Developer · React.js / Next.js"
+    />
 
-    <!-- JSON-LD Structured Data (Person & WebSite) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://mostafa1873.github.io/My-Portfolio/#person",
-          "name": "Mostafa Osama",
-          "jobTitle": "Front-End Developer",
-          "url": "https://mostafa1873.github.io/My-Portfolio/",
-          "sameAs": [
-            "https://github.com/mostafa1873",
-            "https://www.linkedin.com/in/mostafa-osama-b3674b32a"
+    <!-- Dynamic SEO URLs & Structured Data -->
+    <script>
+      (function () {
+        const baseUrl = window.location.origin;
+        const currentUrl = window.location.href.split("#")[0];
+        const imageUrl = new URL("/og-image.png", baseUrl).href;
+
+        // Canonical URL
+        document
+          .getElementById("canonical-url")
+          .setAttribute("href", currentUrl);
+
+        // Open Graph URLs
+        document
+          .querySelector('meta[property="og:url"]')
+          .setAttribute("content", currentUrl);
+
+        document
+          .querySelector('meta[property="og:image"]')
+          .setAttribute("content", imageUrl);
+
+        // Twitter image
+        document
+          .querySelector('meta[name="twitter:image"]')
+          .setAttribute("content", imageUrl);
+
+        // Structured Data
+        const structuredData = {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Person",
+              "@id": baseUrl + "/#person",
+              name: "Mostafa Osama",
+              jobTitle: "Front-End Developer",
+              url: baseUrl + "/",
+              sameAs: [
+                "https://github.com/mostafa1873",
+                "https://www.linkedin.com/in/mostafa-osama-b3674b32a",
+              ],
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Alexandria",
+                addressCountry: "Egypt",
+              },
+              knowsAbout: [
+                "React.js",
+                "Next.js",
+                "JavaScript",
+                "TypeScript",
+                "Tailwind CSS",
+                "REST APIs",
+                "Search Engine Optimization (SEO)",
+                "Web Performance",
+                "Multi-language (i18n)",
+              ],
+            },
+            {
+              "@type": "WebSite",
+              "@id": baseUrl + "/#website",
+              url: baseUrl + "/",
+              name: "Mostafa Osama | Front-End Developer Portfolio",
+              description:
+                "Front-End Developer in Egypt building fast, SEO-optimized React and Next.js websites for export and marketing companies.",
+              author: {
+                "@id": baseUrl + "/#person",
+              },
+            },
           ],
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Alexandria",
-            "addressCountry": "Egypt"
-          },
-          "knowsAbout": [
-            "React.js",
-            "Next.js",
-            "JavaScript",
-            "TypeScript",
-            "Tailwind CSS",
-            "REST APIs",
-            "Search Engine Optimization (SEO)",
-            "Web Performance",
-            "Multi-language (i18n)"
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://mostafa1873.github.io/My-Portfolio/#website",
-          "url": "https://mostafa1873.github.io/My-Portfolio/",
-          "name": "Mostafa Osama | Front-End Developer Portfolio",
-          "description": "Front-End Developer in Egypt building fast, SEO-optimized React and Next.js websites for export and marketing companies.",
-          "author": {
-            "@id": "https://mostafa1873.github.io/My-Portfolio/#person"
-          }
-        }
-      ]
-    }
+        };
+
+        const script = document.createElement("script");
+        script.type = "application/ld+json";
+        script.textContent = JSON.stringify(structuredData);
+        document.head.appendChild(script);
+      })();
     </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
